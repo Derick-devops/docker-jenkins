@@ -9,7 +9,7 @@ pipeline {
 
     stages {
         stage('Checkout SCM') {
-            steps {
+            dir('Lab1') steps {  // <-- path to your Maven project
                 checkout scm
             }
         }
