@@ -33,7 +33,7 @@ pipeline {
         stage('Copy WAR and Dockerfile to Docker Host') {
             steps {
                 sshagent(['docker-ssh-key']) {
-                    script {
+                    dir('Lab1') {
                         sh "scp target/myapp.war Dockerfile $SSH_USER@$DOCKER_HOST:/home/ubuntu/"
                     }
                 }
