@@ -9,14 +9,14 @@ pipeline {
 
     stages {
         stage('Checkout SCM') {
-            dir('Lab1') steps {  // <-- path to your Maven project
+            steps { 
                 checkout scm
             }
         }
 
         stage('Build WAR') {
             steps {
-                script {
+        dir('Lab1') script {
                     sh 'mvn clean package -DskipTests'
                 }
             }
